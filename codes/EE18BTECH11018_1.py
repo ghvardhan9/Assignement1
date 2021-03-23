@@ -9,7 +9,6 @@ h = (-0.5)**np.arange(N)
 for i in range(N):
 	if i > 1:
 		h[i] += np.power(-0.5,i-2)
-#print(h)
 
 def dft(x):
 	n = len(x)
