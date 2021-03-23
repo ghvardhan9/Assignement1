@@ -11,8 +11,6 @@ typedef struct
 void fft(complex *X, int n)
 {
 	if(n <= 1) return;
-	
-	//Arrays for Odd and Even halves
 	complex *X_odd = (complex *) malloc(n/2 * sizeof(complex));
 	complex *X_even = (complex *) malloc(n/2 * sizeof(complex));
 	
@@ -22,11 +20,9 @@ void fft(complex *X, int n)
 		X_odd[i] = X[2*i+1];
 	}
 	
-	//Recursive Calls
 	fft(X_even, n/2);	 	
 	fft(X_odd, n/2);		
 	
-	//FFT computation
 	for(int i = 0; i < n/2; i++) 
 	{
 		double cosine = cos(2*M_PI*i/n);
