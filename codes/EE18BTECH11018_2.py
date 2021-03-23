@@ -10,7 +10,6 @@ h = (-0.5)**np.arange(N)
 for i in range(N):
 	if i > 1:
 		h[i] += np.power(-0.5,i-2)
-#print(h)
 
 def dft(x):
 	n = len(x)
@@ -39,15 +38,11 @@ def fft(x):
 	return np.hstack((X_u,X_l))
 
 X = fft(x)
-#print(X)
-
 H = fft(h)
-#print(H)
-
 Y = X*H
-#print(Y)
 
 plt.figure(figsize=(9,15))
+
 plt.subplot(3,2,1)
 plt.stem(np.abs(X),use_line_collection=True)
 plt.title('$|X(k)|$')
@@ -77,7 +72,7 @@ plt.subplot(3,2,6)
 plt.stem(np.angle(Y),use_line_collection=True)
 plt.title(r'$\angle{Y(k)}$')
 plt.grid()
-plt.savefig('../figs/EE18BTECH11021_2.eps')
+plt.savefig('../figs/EE18BTECH11018_2.eps')
 
 plt.subplots_adjust(hspace=0.5)
 plt.show()
