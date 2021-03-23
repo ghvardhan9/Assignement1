@@ -12,10 +12,8 @@ def dft(x):
 
 def fft(x):	
 	n = len(x)
-	
 	if(n == 1):
 		return x
-	
 	elif(n == 2):
 		return np.hstack((x[0]+x[1],x[0]-x[1]))
 	X1 = fft(x[::2])
